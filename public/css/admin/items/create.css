@@ -1,0 +1,12 @@
+.main-content .header .title {
+  text-transform: uppercase;
+}
+
+.main-content .image {
+  width: 14rem;
+  height: 6rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+

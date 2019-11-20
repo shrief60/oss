@@ -1,0 +1,81 @@
+@import "../../variables";
+.items {
+    .pointer {
+        cursor: pointer;
+    }
+    .w-20 {
+        width: 20%;
+    }
+    .item {
+        background-color: #fff;
+        border-radius: 8px;
+        position: relative;
+        .edit-href {
+            position: absolute;
+            top: 10px;
+            right: 30px;
+            display: flex;
+            align-items: flex-start;
+        }
+        .edit-icon {
+            width: 15px;
+            height: 15px;
+        }
+        .delete-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 15px;
+            height: 15px;
+        }
+        .item-image {
+            width: 100%;
+            height: 7rem;
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: cover;
+            border-top-right-radius: 8px;
+            border-top-left-radius: 8px;
+        }
+        .item-details {
+            color: #000;
+            min-height: 8rem;
+            .item-name {
+                color: $blue
+            }
+            .item-name:hover {
+                color: $cyan;
+            }
+            .price {
+                color: $blue;
+                font-size: 14px;
+            }
+            .price-quot {
+                font-size: 12px;
+                color: $black;
+            }
+        }
+        .order-section {
+            background-color: $cyan;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            .input-order {
+                width: 16px;
+                height: 16px;
+                margin-right: 0.3rem;
+            }
+        }
+    }
+}
+
+.alert-success {
+    display: none !important;
+}
+
+.f-14 {
+    font-size: 14px;
+}
+
+.f-16 {
+    font-size: 16px;
+}
