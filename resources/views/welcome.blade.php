@@ -42,6 +42,7 @@
 
             .content {
                 text-align: center;
+                position: relative;
             }
 
             .title {
@@ -83,6 +84,19 @@
                 font-weight: bold ;
 
             }
+            .brand-name{
+                position: absolute;
+                    top: 0px;
+                    left: 0px;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 5rem;
+                    color: #fff;
+                    font-weight: bold;
+            }
         </style>
     </head>
     <body>
@@ -105,8 +119,10 @@
                 <div class = "bg-image" style = "background-image : url({{ asset('images/bg-image.jpg') }})">
                     <div class = "overlay"></div>
                 </div>
-                <div class="title m-b-md">
-                    Online Shopping System
+                <div class="brand-name">
+                    <div class="brand-title m-b-md">
+                        Online Shopping System
+                    </div>
                 </div>
 
 
