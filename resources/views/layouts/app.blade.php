@@ -15,7 +15,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-    
+
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -49,13 +49,18 @@
                                 </li>
                             @endif
                         @else
+                            @if( auth()->user()->type =="Admin" )
+                                <li class="nav-item mx-1">
+                                    <a href="{{ route('items.create') }}" style="color :rgb(144, 144, 144);text-decoration:none"> Create Item </a>
+                                </li>
+                            @endif
                             <li class="nav-item mx-1">
                                 <a href="{{ route('myorders.index') }}" style  = "color :rgb(144, 144, 144);text-decoration:none"> My Orders </a>
                             </li>
                             <li class="nav-item mx-1">
                                     <a href="{{ route('mybills.index') }}" style  = "color :rgb(144, 144, 144);text-decoration:none"> My Bills  </a>
                                 </li>
-                            
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -83,7 +88,7 @@
             @yield('content')
         </main>
     </div>
-    
+
     <!--scirpts -->
     @stack('js')
 </body>

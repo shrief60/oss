@@ -28,7 +28,6 @@ class UpdateItemRequest extends FormRequest
             'price' => 'required' ,
             'description' =>'required',
             'brand' => 'required',
-            'image' => 'required'
         ];
     }
 }

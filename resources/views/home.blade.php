@@ -7,9 +7,9 @@
                 Your item is deleted Successfully.
         </div>
         <div class = "items d-flex flex-wrap align-items-start justify-content-start w-100 px-4 py-2">
-            @foreach($items as $item)
+            @forelse($items as $item)
                 <div class="item  mx-2  w-20" id = "item-{{ $item->id }}">
-                    
+
                     <div class = "item-image"  style = 'background-image:url({{ $item->image }})'></div>
                     <div class = "item-details px-2 py-2">
                         <h6 class = "item-name pointer">{{ $item->name }} </h4>
@@ -20,10 +20,16 @@
                     <div class = "px-2 d-flex py-2 order-section">
                         <input type="checkbox" name="item" id="item_{{ $item->id }}" value="{{ $item->id }}" class = 'input-order' >
                         <span class = "f-14"> Order this Item</span>
-                    </div>  
-                   
+                    </div>
+
                 </div>
-            @endforeach
+                @empty
+                    <div class="card w-100">
+                        <div class="card-body">
+                            This is No Products.
+                        </div>
+                    </div>
+            @endforelse
         </div>
         <div class="d-flex justify-content-center align-items-center">
 
@@ -62,13 +68,13 @@
                         </div>
                       </div>
         </div>
-       
+
     </div>
-   
+
 @endsection
 
 
-            
+
 
 @push('css')
     {!! css('admin/items/index') !!}

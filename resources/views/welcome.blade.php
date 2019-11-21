@@ -104,17 +104,12 @@
             <div class="content">
                 <div class = "bg-image" style = "background-image : url({{ asset('images/bg-image.jpg') }})">
                     <div class = "overlay"></div>
-                    {{--  background-color: rgba(0, 0, 0, 0.53);
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;  --}}
                 </div>
                 <div class="title m-b-md">
                     Online Shopping System
                 </div>
 
-               
+
             </div>
         </div>
     </body>

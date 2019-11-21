@@ -38,6 +38,8 @@ Route::middleware(['auth' ,'checktype'])->group(function(){
 /************************************************************* */
 //********************* user Routes ***************************/
 /************************************************************* */
-Route::post('/orders' , 'OrderController@create')->name('order.create');
-Route::get('/my-orders' , 'OrderController@index')->name('myorders.index');
-Route::get('/my-bills' , 'OrderController@show_bills')->name('mybills.index');
+Route::middleware(['auth'])->group(function () {
+    Route::post('/orders' , 'OrderController@create')->name('order.create');
+    Route::get('/my-orders' , 'OrderController@index')->name('myorders.index');
+    Route::get('/my-bills' , 'OrderController@show_bills')->name('mybills.index');
+});
