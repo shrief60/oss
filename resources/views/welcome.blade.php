@@ -61,39 +61,60 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            .bg-image{
+                background-repeat: no-repeat;
+                width: 100vw;
+                height: 100vh;
+                background-position: center;
+                background-size: cover;
+            }
+            .overlay{
+                background-color: rgba(0, 0, 0, 0.53);
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+            }
+            .title{
+                position: absolute;
+                top: 40%;
+                left:18% ;
+                color :#fff ;
+                font-weight: bold ;
+
+            }
         </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div class="top-right links">
+                <div class="top-right links" style = "z-index : 9999;color :#fff">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a style = "color :#fff" href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a style = "color :#fff" href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a style = "color :#fff" href="{{ route('register') }}">Register</a>
                         @endif
                     @endauth
                 </div>
             @endif
 
             <div class="content">
+                <div class = "bg-image" style = "background-image : url({{ asset('images/bg-image.jpg') }})">
+                    <div class = "overlay"></div>
+                    {{--  background-color: rgba(0, 0, 0, 0.53);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;  --}}
+                </div>
                 <div class="title m-b-md">
-                    Laravel
+                    Online Shopping System
                 </div>
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+               
             </div>
         </div>
     </body>

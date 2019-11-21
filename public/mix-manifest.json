@@ -3,5 +3,7 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/admin/items/create.css": "/css/admin/items/create.css",
-    "/css/admin/items/index.css": "/css/admin/items/index.css"
+    "/css/admin/items/index.css": "/css/admin/items/index.css",
+    "/css/user/orders/index.css": "/css/user/orders/index.css",
+    "/js/user/home.js": "/js/user/home.js"
 }

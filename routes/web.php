@@ -22,13 +22,22 @@ Route::get('/home', 'HomeController@index')->name('home');
 /************************************************************* */
 //********************* Admin Routes ***************************/
 /************************************************************* */
+Route::middleware(['auth' ,'checktype'])->group(function(){
+    Route::get('items' , 'ItemController@index')->name('items.index');
 
-Route::get('items' , 'ItemController@index')->name('items.index');
+    Route::get('items/create' , 'ItemController@create')->name('items.create');
+    Route::post('items/store' , 'ItemController@store')->name('items.store');
 
-Route::get('items/create' , 'ItemController@create')->name('items.create');
-Route::post('items/store' , 'ItemController@store')->name('items.store');
+    Route::get('items/edit/{item}' , 'ItemController@edit')->name('items.edit');
+    Route::post('items/update/{item}' , 'ItemController@update')->name('items.update');
 
-Route::get('items/edit/{item}' , 'ItemController@edit')->name('items.edit');
-Route::post('items/update/{item}' , 'ItemController@update')->name('items.update');
+    Route::delete('items/{item}' , 'ItemController@destroy')->name('items.destroy');
 
-Route::delete('items/{item}' , 'ItemController@destroy')->name('items.destroy');
+});
+
+/************************************************************* */
+//********************* user Routes ***************************/
+/************************************************************* */
+Route::post('/orders' , 'OrderController@create')->name('order.create');
+Route::get('/my-orders' , 'OrderController@index')->name('myorders.index');
+Route::get('/my-bills' , 'OrderController@show_bills')->name('mybills.index');

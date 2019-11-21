@@ -11,7 +11,10 @@ class Item extends Model
     /*************************************** */
     /************ Relations ***************** */
     
-
+    public function orderDetails()
+    {
+        return $this->belongsTo(orderDetails::class );
+    }
 
     /*************************************** */
     /************ Accessor ***************** */
@@ -19,4 +22,5 @@ class Item extends Model
     {
         return  ($image !=null) ? asset(Storage::url($image)) : asset('images/icons/default_product.jpg');
     }
+
 }

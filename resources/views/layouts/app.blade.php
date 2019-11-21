@@ -37,7 +37,7 @@
                     </ul>
 
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav ml-auto d-flex align-items-center">
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
@@ -49,6 +49,13 @@
                                 </li>
                             @endif
                         @else
+                            <li class="nav-item mx-1">
+                                <a href="{{ route('myorders.index') }}" style  = "color :rgb(144, 144, 144);text-decoration:none"> My Orders </a>
+                            </li>
+                            <li class="nav-item mx-1">
+                                    <a href="{{ route('mybills.index') }}" style  = "color :rgb(144, 144, 144);text-decoration:none"> My Bills  </a>
+                                </li>
+                            
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

@@ -14,6 +14,8 @@ const mix = require('laravel-mix');
 mix.sass('resources/sass/app.scss', 'public/css')
     .sass('resources/sass/admin/items/create.scss', 'public/css/admin/items')
     .sass('resources/sass/admin/items/index.scss', 'public/css/admin/items')
+    .sass('resources/sass/user/orders/index.scss', 'public/css/user/orders')
 
 .js('resources/js/app.js', 'public/js')
-    .js('resources/js/admin/items/index.js', 'public/js/admin/items');
+    .js('resources/js/admin/items/index.js', 'public/js/admin/items')
+    .js('resources/js/user/home.js', 'public/js/user');

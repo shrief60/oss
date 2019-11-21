@@ -53,6 +53,15 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="type" class ="col-md-4 col-form-label text-md-right">User type</label>
+                            <select class="form-control col-md-5" id="type" name = "type">
+                              <option value = "Admin">Admin</option>
+                              <option value = "User">User</option>
+                            
+                            </select>
+                          </div>
+
+                        <div class="form-group row">
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone Number') }}</label>
                             <div class="col-md-6">
                                 <input id="phone" type="number" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
